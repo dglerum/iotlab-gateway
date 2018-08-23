@@ -22,13 +22,6 @@ Therefore, there is no security and user management is reduced to the minimum.
 
 Where `<gateway>` should be replaced by the IP address of the gateway.
 
-## WiFi access point
-
-Use the following credentials to connect:
-
-* SSID: `iotlab-ap`
-* Key: `iotlab`
-
 ## User management
 
 A training user can be created or removed thanks to some scripts
