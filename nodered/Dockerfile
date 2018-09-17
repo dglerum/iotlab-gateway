@@ -1,7 +1,4 @@
-# base-image for node on any machine using a template variable,
-# see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
-# Note the node:slim image doesn't have node-gyp
-FROM resin/raspberrypi3-alpine-node:6-slim
+FROM resin/raspberrypi3-alpine-node:8
 
 # Defines our working directory in container
 RUN mkdir -p /usr/src/app/
@@ -21,12 +18,8 @@ RUN apk add --no-cache make gcc g++ python git linux-headers py-rpigpio && \
   apk del make gcc g++ linux-headers && \
   npm cache clean --force && rm -rf /tmp/*
 
-# This will copy all files in our root to the working  directory in the container
 COPY ./app ./
 VOLUME /var/lib/node-red
-
-# Enable systemd init system in container
-# ENV INITSYSTEM=on
 
 EXPOSE 80
 
