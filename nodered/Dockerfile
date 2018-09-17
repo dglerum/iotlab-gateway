@@ -5,8 +5,8 @@ RUN mkdir -p /usr/src/app/
 WORKDIR /usr/src/app
 
 # Install node modules, including i2c-bus without carrying all the deps in the layers
-RUN apt-get update && apt-get install -y build-essential git python-rpi.gpio && \
-  JOBS=MAX npm install -g --production --silent \
+RUN apt-get update && apt-get install -y build-essential git python-rpi.gpio
+RUN JOBS=MAX npm install -g --production --silent \
     node-red \
     node-red-dashboard \
     node-red-contrib-influxdb \
