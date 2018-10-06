@@ -13,8 +13,8 @@ services:
       - mosquitto
     volumes:
       - "nodered:/var/lib/node-red"
-    expose:
-      - "80"
+    # expose:
+    #   - "80"
     devices:
       - "/dev/i2c-1:/dev/i2c-1"
       - "/dev/mem:/dev/mem"
