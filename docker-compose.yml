@@ -24,7 +24,7 @@ services:
 
   influxdb:
     image: arm32v7/influxdb:latest
-    environment: 
+    environment:
       - "INFLUXDB_DB=iotlab"
     volumes:
       - "influxdb:/var/lib/influxdb"
@@ -33,13 +33,13 @@ services:
 
   grafana:
     build: ./grafana
-    environment: 
+    environment:
       - "GF_INSTALL_PLUGINS=natel-discrete-panel,natel-influx-admin-panel"
     depends_on:
       - influxdb
     volumes:
       - "grafana:/var/lib/grafana"
-    expose:
+    ports:
       - "3000"
 
   nginx:
