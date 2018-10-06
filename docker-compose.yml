@@ -18,6 +18,7 @@ services:
     devices:
       - "/dev/i2c-1:/dev/i2c-1"
       - "/dev/mem:/dev/mem"
+    network_mode: host
     cap_add:
       - SYS_RAWIO
 
