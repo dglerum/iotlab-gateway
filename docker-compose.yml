@@ -8,6 +8,7 @@ services:
 
   nodered:
     build: ./nodered
+    privileged: true
     depends_on:
       - influxdb
       - mosquitto
